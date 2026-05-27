@@ -7,6 +7,12 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Request logging middleware
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.path} | Query: ${JSON.stringify(req.query)} | Headers: Host=${req.headers.host}`);
+  next();
+});
+
 // ICA Emirates ID Validation Endpoint
 app.get('/ica/validate', (req, res) => {
   const { eid, _delay, _fail } = req.query;

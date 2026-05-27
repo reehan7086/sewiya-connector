@@ -23,7 +23,7 @@ class ConnectorService extends cds.ApplicationService {
 
       // Call external service
       try {
-        const result = await this._callExternalService('ICA_API', `/validate?eid=${eid}`, 3);
+        const result = await this._callExternalService('ICA_VALIDATE', `?eid=${eid}`, 3);
 
         // Store in cache
         await INSERT.into(Cache).entries({
@@ -58,7 +58,7 @@ class ConnectorService extends cds.ApplicationService {
 
       // Call external service
       try {
-        const result = await this._callExternalService('DED_API', `/validate?tl=${tl}`, 3);
+        const result = await this._callExternalService('DED_VALIDATE', `?tl=${tl}`, 3);
 
         // Store in cache
         await INSERT.into(Cache).entries({
@@ -78,15 +78,18 @@ class ConnectorService extends cds.ApplicationService {
     await super.init();
   }
 
-  async _callExternalService(destination, path, maxRetries = 3) {
+  async _callExternalService(destination, queryParams, maxRetries = 3) {
     let lastError;
     const delays = [1000, 2000, 4000]; // Exponential backoff
 
     for (let attempt = 0; attempt < maxRetries; attempt++) {
       try {
+        // Log the full URL being called for debugging
+        console.log(`Calling destination: ${destination} with params: ${queryParams}`);
+
         const response = await executeHttpRequest({
           destinationName: destination,
-          path: path,
+          url: queryParams, // Append query params to destination URL
           method: 'GET',
           timeout: 5000
         });
