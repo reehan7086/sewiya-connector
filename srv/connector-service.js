@@ -23,7 +23,7 @@ class ConnectorService extends cds.ApplicationService {
 
       // Call external service
       try {
-        const result = await this._callExternalService('ICA_API', `/ica/validate?eid=${eid}`, 3);
+        const result = await this._callExternalService('ICA_API', `/validate?eid=${eid}`, 3);
 
         // Store in cache
         await INSERT.into(Cache).entries({
@@ -58,7 +58,7 @@ class ConnectorService extends cds.ApplicationService {
 
       // Call external service
       try {
-        const result = await this._callExternalService('DED_API', `/ded/validate?tl=${tl}`, 3);
+        const result = await this._callExternalService('DED_API', `/validate?tl=${tl}`, 3);
 
         // Store in cache
         await INSERT.into(Cache).entries({

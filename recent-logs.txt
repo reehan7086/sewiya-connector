@@ -1,0 +1,96 @@
+Retrieving logs for app sewiya-connector-srv in org b991bb6btrial / space dev as abdulbasha.shaik@pwc.com...
+
+   2026-05-27T13:30:35.11+0530 [API/3] OUT Applied manifest to app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03 (---
+   2026-05-27T13:30:35.11+0530 [API/3] OUT applications:
+   2026-05-27T13:30:35.11+0530 [API/3] OUT - name: sewiya-connector-srv
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   path: gen\srv
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   memory: 512M
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   default-route: true
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   buildpack: nodejs_buildpack
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   env: "[PRIVATE DATA HIDDEN]"
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   services:
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   - sewiya-auth-xsuaa
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   - sewiya-connector-db
+   2026-05-27T13:30:35.11+0530 [API/3] OUT   - sewiya-dest
+   2026-05-27T13:30:35.11+0530 [API/3] OUT )
+   2026-05-27T13:30:35.40+0530 [API/4] OUT Scaling process: "web"
+   2026-05-27T13:30:35.45+0530 [API/4] OUT Updated app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03 ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}}})
+   2026-05-27T13:30:35.50+0530 [API/4] OUT Updated app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03 ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"})
+   2026-05-27T13:30:40.22+0530 [API/21] OUT Uploading app package for app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03
+   2026-05-27T13:30:44.23+0530 [API/17] OUT Creating build for app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03
+   2026-05-27T13:30:44.65+0530 [STG/0] OUT Downloading nodejs_buildpack...
+   2026-05-27T13:30:44.72+0530 [STG/0] OUT Downloaded nodejs_buildpack
+   2026-05-27T13:30:44.72+0530 [STG/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
+   2026-05-27T13:30:45.84+0530 [STG/0] OUT Security group rules were updated
+   2026-05-27T13:30:45.97+0530 [STG/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
+   2026-05-27T13:30:46.55+0530 [STG/0] OUT Downloading app package...
+   2026-05-27T13:30:46.55+0530 [STG/0] OUT Downloading build artifacts cache...
+   2026-05-27T13:30:46.63+0530 [STG/0] OUT Downloaded app package (38.1K)
+   2026-05-27T13:30:47.20+0530 [STG/0] OUT Downloaded build artifacts cache (5.6M)
+   2026-05-27T13:30:47.35+0530 [STG/0] OUT -----> Nodejs Buildpack version 1.8.44
+   2026-05-27T13:30:47.35+0530 [STG/0] OUT -----> Bootstrapping python
+   2026-05-27T13:30:47.35+0530 [STG/0] OUT -----> Installing python 3.11.14
+   2026-05-27T13:30:47.35+0530 [STG/0] OUT Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/b5e0345ae0ae1932e7d56fffaa49a487/python_3.11.14_linux_x64_cflinuxfs4_66f53248.tgz]
+   2026-05-27T13:30:52.19+0530 [STG/0] OUT -----> Installing binaries
+   2026-05-27T13:30:52.19+0530 [STG/0] OUT engines.node (package.json): >=20
+   2026-05-27T13:30:52.19+0530 [STG/0] OUT engines.npm (package.json): unspecified (use default)
+   2026-05-27T13:30:52.19+0530 [STG/0] OUT [31;1m**WARNING**[0m Dangerous semver range (>) in engines.node. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.html
+   2026-05-27T13:30:52.19+0530 [STG/0] OUT -----> Installing node 24.13.0
+   2026-05-27T13:30:52.19+0530 [STG/0] OUT Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/2f5692219fecc3eee6e6d507a6bfe7b9/node_24.13.0_linux_x64_cflinuxfs4_a816dee1.tgz]
+   2026-05-27T13:30:55.09+0530 [STG/0] OUT Using default npm version: 11.6.2
+   2026-05-27T13:30:55.09+0530 [STG/0] OUT -----> Installing yarn 1.22.22
+   2026-05-27T13:30:55.09+0530 [STG/0] OUT Copy [/tmp/buildpacks/978cee5ec9c58000/dependencies/e3a39aedd1236924d69cc2d0637a8ed2/yarn_1.22.22_linux_noarch_any-stack_4911d0a6.tgz]
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT Installed yarn 1.22.22
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT -----> Creating runtime environment
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT [34;1mPRO TIP:[0m It is recommended to vendor the application's Node.js dependencies
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT Visit http://docs.cloudfoundry.org/buildpacks/node/index.html#vendoring
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT NODE_ENV=production
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT NODE_HOME=/tmp/contents3568144435/deps/0/node
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT NODE_MODULES_CACHE=true
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT NODE_VERBOSE=false
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT NPM_CONFIG_LOGLEVEL=error
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT NPM_CONFIG_PRODUCTION=true
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT -----> Building dependencies
+   2026-05-27T13:30:55.47+0530 [STG/0] OUT Installing node modules (package.json + package-lock.json)
+   2026-05-27T13:30:57.89+0530 [STG/0] OUT added 156 packages, and audited 157 packages in 2s
+   2026-05-27T13:30:57.89+0530 [STG/0] OUT 33 packages are looking for funding
+   2026-05-27T13:30:57.89+0530 [STG/0] OUT run `npm fund` for details
+   2026-05-27T13:30:57.89+0530 [STG/0] OUT found 0 vulnerabilities
+   2026-05-27T13:30:58.55+0530 [STG/0] OUT [31;1m**WARNING**[0m Unmet dependencies don't fail npm install but may cause runtime issues
+   2026-05-27T13:30:58.55+0530 [STG/0] OUT See: https://github.com/npm/npm/issues/7494
+   2026-05-27T13:30:58.61+0530 [STG/0] OUT Contrast Security no credentials found. Will not write environment files.
+   2026-05-27T13:31:10.59+0530 [STG/0] OUT Exit status 0
+   2026-05-27T13:31:10.59+0530 [STG/0] OUT Uploading droplet, build artifacts cache...
+   2026-05-27T13:31:10.59+0530 [STG/0] OUT Uploading droplet...
+   2026-05-27T13:31:10.59+0530 [STG/0] OUT Uploading build artifacts cache...
+   2026-05-27T13:31:10.69+0530 [STG/0] OUT Uploaded build artifacts cache (5.6M)
+   2026-05-27T13:31:11.40+0530 [API/10] OUT Creating droplet for app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03
+   2026-05-27T13:31:15.46+0530 [STG/0] OUT Uploaded droplet (60.9M)
+   2026-05-27T13:31:15.49+0530 [STG/0] OUT Uploading complete
+   2026-05-27T13:31:16.52+0530 [STG/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 stopping instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
+   2026-05-27T13:31:16.52+0530 [STG/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 destroying container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
+   2026-05-27T13:31:16.57+0530 [API/10] OUT Staging complete for build 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
+   2026-05-27T13:31:19.22+0530 [API/10] OUT Updated app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03 ({:droplet_guid=>"428e43eb-249f-48fc-a555-94a69253caf7"})
+   2026-05-27T13:31:19.53+0530 [API/19] OUT Creating revision for app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03
+   2026-05-27T13:31:19.58+0530 [CELL/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 stopping instance 6ab698e0-2aa0-438e-5cf0-8e0a
+   2026-05-27T13:31:19.66+0530 [API/19] OUT Restarted app with guid 0094512e-9860-4c69-9ad4-fa60b6593a03
+   2026-05-27T13:31:19.78+0530 [CELL/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 29fba0e0-bd15-4076-5583-4b0e
+   2026-05-27T13:31:20.06+0530 [STG/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully destroyed container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
+   2026-05-27T13:31:20.71+0530 [CELL/0] OUT Security group rules were updated
+   2026-05-27T13:31:20.82+0530 [CELL/0] OUT Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 29fba0e0-bd15-4076-5583-4b0e
+   2026-05-27T13:31:21.46+0530 [CELL/0] OUT Downloading droplet...
+   2026-05-27T13:31:26.54+0530 [CELL/0] OUT Downloaded droplet (60.9M)
+   2026-05-27T13:31:26.54+0530 [CELL/0] OUT Starting health monitoring of container
+   2026-05-27T13:31:26.70+0530 [APP/PROC/WEB/0] OUT Invoking pre-start scripts.
+   2026-05-27T13:31:26.96+0530 [APP/PROC/WEB/0] OUT Invoking start command.
+   2026-05-27T13:31:27.53+0530 [APP/PROC/WEB/0] OUT > sewiya-connector@1.0.0 start
+   2026-05-27T13:31:27.53+0530 [APP/PROC/WEB/0] OUT > cds-serve
+   2026-05-27T13:31:27.84+0530 [APP/PROC/WEB/0] OUT {"level":"info","logger":"cds","timestamp":"2026-05-27T08:01:27.847Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"0094512e-9860-4c69-9ad4-fa60b6593a03","component_name":"sewiya-connector-srv","component_instance":0,"source_instance":0,"organization_name":"b991bb6btrial","organization_id":"3dec19d3-bc91-43cb-9e17-bfc9bf7ba7bd","space_name":"dev","space_id":"10a9a65f-1afc-449a-ac23-c20c1e9e94cb","msg":"loaded model from 1 file(s):\n ","type":"log"}
+   2026-05-27T13:31:27.84+0530 [APP/PROC/WEB/0] OUT srv/csn.json
+   2026-05-27T13:31:28.12+0530 [APP/PROC/WEB/0] OUT {"level":"info","logger":"cds","timestamp":"2026-05-27T08:01:28.121Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"0094512e-9860-4c69-9ad4-fa60b6593a03","component_name":"sewiya-connector-srv","component_instance":0,"source_instance":0,"organization_name":"b991bb6btrial","organization_id":"3dec19d3-bc91-43cb-9e17-bfc9bf7ba7bd","space_name":"dev","space_id":"10a9a65f-1afc-449a-ac23-c20c1e9e94cb","msg":"connect to db > hana {\n  database_id: '6884c2af-881d-4f42-aa05-03a6fe90085f',\n  host: '6884c2af-881d-4f42-aa05-03a6fe90085f.hna1.prod-us10.hanacloud.ondemand.com',\n  port: '443',\n  driver: 'com.sap.db.jdbc.Driver',\n  url: 'jdbc:sap://6884c2af-881d-4f42-aa05-03a6fe90085f.hna1.prod-us10.hanacloud.ondemand.com:443?encrypt=true&validateCertificate=true&currentschema=BBF5A104584A40E89EC6CC3291484F4A',\n  schema: 'BBF5A104584A40E89EC6CC3291484F4A',\n  hdi_user: 'BBF5A104584A40E89EC6CC3291484F4A_783X7SYD831VQ48V4HSC12D3C_DT',\n  hdi_password: '...',\n  user: 'BBF5A104584A40E89EC6CC3291484F4A_783X7SYD831VQ48V4HSC12D3C_RT',\n  password: '...',\n  certificate: '...'\n}","type":"log"}
+   2026-05-27T13:31:28.44+0530 [APP/PROC/WEB/0] OUT {"level":"info","logger":"cds","timestamp":"2026-05-27T08:01:28.444Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"0094512e-9860-4c69-9ad4-fa60b6593a03","component_name":"sewiya-connector-srv","component_instance":0,"source_instance":0,"organization_name":"b991bb6btrial","organization_id":"3dec19d3-bc91-43cb-9e17-bfc9bf7ba7bd","space_name":"dev","space_id":"10a9a65f-1afc-449a-ac23-c20c1e9e94cb","msg":"using auth strategy { kind: 'xsuaa' }","type":"log"}
+   2026-05-27T13:31:28.47+0530 [APP/PROC/WEB/0] OUT {"level":"info","logger":"cds","timestamp":"2026-05-27T08:01:28.474Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"0094512e-9860-4c69-9ad4-fa60b6593a03","component_name":"sewiya-connector-srv","component_instance":0,"source_instance":0,"organization_name":"b991bb6btrial","organization_id":"3dec19d3-bc91-43cb-9e17-bfc9bf7ba7bd","space_name":"dev","space_id":"10a9a65f-1afc-449a-ac23-c20c1e9e94cb","msg":"serving ConnectorService {\n  at: [ '/odata/v4/connector' ],\n  decl: 'srv/csn.json:26',\n  impl: 'srv/connector-service.js'\n}","type":"log"}
+   2026-05-27T13:31:28.48+0530 [APP/PROC/WEB/0] OUT {"level":"info","logger":"cds","timestamp":"2026-05-27T08:01:28.482Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"0094512e-9860-4c69-9ad4-fa60b6593a03","component_name":"sewiya-connector-srv","component_instance":0,"source_instance":0,"organization_name":"b991bb6btrial","organization_id":"3dec19d3-bc91-43cb-9e17-bfc9bf7ba7bd","space_name":"dev","space_id":"10a9a65f-1afc-449a-ac23-c20c1e9e94cb","msg":"server listening on { url: 'http://localhost:8080' }","type":"log"}
+   2026-05-27T13:31:28.48+0530 [APP/PROC/WEB/0] OUT {"level":"info","logger":"cds","timestamp":"2026-05-27T08:01:28.482Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"0094512e-9860-4c69-9ad4-fa60b6593a03","component_name":"sewiya-connector-srv","component_instance":0,"source_instance":0,"organization_name":"b991bb6btrial","organization_id":"3dec19d3-bc91-43cb-9e17-bfc9bf7ba7bd","space_name":"dev","space_id":"10a9a65f-1afc-449a-ac23-c20c1e9e94cb","msg":"server v9.9.1 launched in 931 ms","type":"log"}
+   2026-05-27T13:31:29.11+0530 [CELL/0] OUT Container became healthy
+   2026-05-27T13:31:29.14+0530 [API/7] OUT Process became ready with guid 0094512e-9860-4c69-9ad4-fa60b6593a03 payload: {"instance"=>"29fba0e0-bd15-4076-5583-4b0e", "index"=>0, "cell_id"=>"c839c7b1-088e-41af-b9b7-66256aacd457", "ready"=>true, "version"=>"831f1b15-dfd9-41fd-946a-2e2452876179"}

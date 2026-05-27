@@ -4,32 +4,34 @@ Applying manifest file manifest.yml...
 Updating with these attributes...
   ---
   applications:
-+ - name: sewiya-connector-srv
+  - name: sewiya-connector-srv
     path: gen\srv
     memory: 512M
 +   default-route: true
 +   buildpack: nodejs_buildpack
-+   env:
-+     NODE_ENV: production
-+   services:
-+   - sewiya-auth-xsuaa
-+   - sewiya-connector-db
-+   - sewiya-dest
+    env:
+      NODE_ENV: production
+    services:
+      sewiya-auth-xsuaa
+      sewiya-connector-db
+      sewiya-dest
 Manifest applied
 Packaging files to upload...
 Uploading files...
- 0 B / 38.43 KiB    0.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 38.43 KiB / 38.43 KiB  100.00% 1s
+ 0 B / 3.61 KiB    0.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 1s
 
 Waiting for API to complete processing files...
 
 Staging app and tracing logs...
    Downloading nodejs_buildpack...
    Downloaded nodejs_buildpack
-   Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 creating container for instance d47d0e2d-d498-419d-a5b1-b1e9b1df7d6b
+   Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
    Security group rules were updated
-   Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully created container for instance d47d0e2d-d498-419d-a5b1-b1e9b1df7d6b
+   Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
    Downloading app package...
-   Downloaded app package (38.4K)
+   Downloading build artifacts cache...
+   Downloaded app package (38.1K)
+   Downloaded build artifacts cache (5.6M)
    -----> Nodejs Buildpack version 1.8.44
    -----> Bootstrapping python
    -----> Installing python 3.11.14
@@ -48,22 +50,17 @@ Staging app and tracing logs...
    [34;1mPRO TIP:[0m It is recommended to vendor the application's Node.js dependencies
    Visit http://docs.cloudfoundry.org/buildpacks/node/index.html#vendoring
    NODE_ENV=production
-   NODE_HOME=/tmp/contents3142313576/deps/0/node
+   NODE_HOME=/tmp/contents3568144435/deps/0/node
    NODE_MODULES_CACHE=true
    NODE_VERBOSE=false
    NPM_CONFIG_LOGLEVEL=error
    NPM_CONFIG_PRODUCTION=true
    -----> Building dependencies
    Installing node modules (package.json + package-lock.json)
-   added 155 packages, and audited 156 packages in 3s
+   added 156 packages, and audited 157 packages in 2s
    33 packages are looking for funding
    run `npm fund` for details
    found 0 vulnerabilities
-   npm notice
-   npm notice New minor version of npm available! 11.6.2 -> 11.15.0
-   npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.15.0
-   npm notice To update run: npm install -g npm@11.15.0
-   npm notice
    [31;1m**WARNING**[0m Unmet dependencies don't fail npm install but may cause runtime issues
    See: https://github.com/npm/npm/issues/7494
    Contrast Security no credentials found. Will not write environment files.
@@ -71,7 +68,11 @@ Staging app and tracing logs...
    Uploading droplet, build artifacts cache...
    Uploading droplet...
    Uploading build artifacts cache...
-   Uploaded build artifacts cache (4.8M)
+   Uploaded build artifacts cache (5.6M)
+   Uploaded droplet (60.9M)
+   Uploading complete
+   Cell c839c7b1-088e-41af-b9b7-66256aacd457 stopping instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
+   Cell c839c7b1-088e-41af-b9b7-66256aacd457 destroying container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
 
 Waiting for app sewiya-connector-srv to start...
 
@@ -84,7 +85,7 @@ name:                sewiya-connector-srv
 requested state:     started
 isolation segment:   trial
 routes:              sewiya-connector-srv.cfapps.us10-001.hana.ondemand.com
-last uploaded:       Wed 27 May 11:36:46 IST 2026
+last uploaded:       Wed 27 May 13:31:11 IST 2026
 stack:               cflinuxfs4
 buildpacks:          
 isolation segment:   trial
@@ -96,5 +97,5 @@ sidecars:
 instances:       1/1
 memory usage:    512M
 start command:   npm start
-     state     since                  cpu    memory     disk       logging        cpu entitlement   details   ready
-#0   running   2026-05-27T06:07:05Z   0.0%   0B of 0B   0B of 0B   0B/s of 0B/s   0.0%                        true
+     state     since                  cpu    memory          disk           logging             cpu entitlement   details   ready
+#0   running   2026-05-27T08:01:30Z   1.0%   80.8M of 512M   231.1M of 1G   0B/s of unlimited   8.1%                        true
