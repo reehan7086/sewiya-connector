@@ -1,0 +1,37 @@
+{
+  "name": "sewiya-connector",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cds-serve",
+    "watch": "cds watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@sap/cds-dk": "^9.9.1",
+    "@cap-js/sqlite": "^1.11.1"
+  },
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/xssec": "^4",
+    "@sap/cds": "^9",
+    "@sap-cloud-sdk/connectivity": "^3",
+    "@sap-cloud-sdk/http-client": "^3"
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "[development]": { "kind": "mocked" },
+        "[production]": { "kind": "xsuaa" }
+      },
+      "db": {
+        "[development]": { "kind": "sql", "impl": "@cap-js/sqlite", "credentials": { "url": ":memory:" } },
+        "[production]": { "kind": "hana" }
+      }
+    }
+  }
+}

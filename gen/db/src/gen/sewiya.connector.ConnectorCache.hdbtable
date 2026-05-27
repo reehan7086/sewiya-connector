@@ -1,0 +1,7 @@
+COLUMN TABLE sewiya_connector_ConnectorCache (
+  cacheKey NVARCHAR(200) NOT NULL,
+  resultPayload NCLOB,
+  cachedAt TIMESTAMP,
+  ttlSeconds INTEGER DEFAULT 3600,
+  PRIMARY KEY(cacheKey)
+)

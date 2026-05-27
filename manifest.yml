@@ -1,0 +1,12 @@
+---
+applications:
+  - name: sewiya-connector-srv
+    path: ./gen/srv
+    memory: 512M
+    buildpack: nodejs_buildpack
+    services:
+      - sewiya-auth-xsuaa
+      - sewiya-connector-db
+      - sewiya-dest
+    env:
+      NODE_ENV: production

@@ -1,0 +1,11 @@
+{
+  "Name": "DED_API",
+  "Type": "HTTP",
+  "URL": "https://sewiya-connector-mock.cfapps.us10-001.hana.ondemand.com",
+  "Authentication": "NoAuthentication",
+  "ProxyType": "Internet",
+  "Description": "Mock DED Trade License Validation API",
+  "Properties": {
+    "timeout": "30000"
+  }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="ConnectorService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <Annotation Term="Core.Links">
+        <Collection>
+          <Record>
+            <PropertyValue Property="rel" String="author"/>
+            <PropertyValue Property="href" String="https://cap.cloud.sap"/>
+          </Record>
+        </Collection>
+      </Annotation>
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="Cache" EntityType="ConnectorService.Cache"/>
+        <ActionImport Name="validateEmiratesID" Action="ConnectorService.validateEmiratesID"/>
+        <ActionImport Name="validateTradeLicense" Action="ConnectorService.validateTradeLicense"/>
+      </EntityContainer>
+      <EntityType Name="Cache">
+        <Key>
+          <PropertyRef Name="cacheKey"/>
+        </Key>
+        <Property Name="cacheKey" Type="Edm.String" MaxLength="200" Nullable="false"/>
+        <Property Name="resultPayload" Type="Edm.String"/>
+        <Property Name="cachedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="ttlSeconds" Type="Edm.Int32" DefaultValue="3600"/>
+      </EntityType>
+      <Action Name="validateEmiratesID" IsBound="false">
+        <Parameter Name="eid" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Action>
+      <Action Name="validateTradeLicense" IsBound="false">
+        <Parameter Name="tl" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Action>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

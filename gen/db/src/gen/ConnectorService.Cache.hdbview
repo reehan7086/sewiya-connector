@@ -1,0 +1,6 @@
+VIEW ConnectorService_Cache AS SELECT
+  ConnectorCache_0.cacheKey,
+  ConnectorCache_0.resultPayload,
+  ConnectorCache_0.cachedAt,
+  ConnectorCache_0.ttlSeconds
+FROM sewiya_connector_ConnectorCache AS ConnectorCache_0
