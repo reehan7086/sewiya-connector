@@ -1,5 +1,6 @@
 const cds = require('@sap/cds');
-const { executeHttpRequest } = require('@sap-cloud-sdk/http-client');
+const { getDestination } = require('@sap-cloud-sdk/connectivity');
+const axios = require('axios');
 
 class ConnectorService extends cds.ApplicationService {
   async init() {
@@ -23,7 +24,7 @@ class ConnectorService extends cds.ApplicationService {
 
       // Call external service
       try {
-        const result = await this._callExternalService('ICA_VALIDATE', `?eid=${eid}`, 3);
+        const result = await this._callExternalService('ICA_API', `/validate?eid=${encodeURIComponent(eid)}`, 3);
 
         // Store in cache
         await INSERT.into(Cache).entries({
@@ -58,7 +59,7 @@ class ConnectorService extends cds.ApplicationService {
 
       // Call external service
       try {
-        const result = await this._callExternalService('DED_VALIDATE', `?tl=${tl}`, 3);
+        const result = await this._callExternalService('DED_API', `/validate?tl=${encodeURIComponent(tl)}`, 3);
 
         // Store in cache
         await INSERT.into(Cache).entries({
@@ -78,20 +79,25 @@ class ConnectorService extends cds.ApplicationService {
     await super.init();
   }
 
-  async _callExternalService(destination, queryParams, maxRetries = 3) {
+  async _callExternalService(destinationName, queryParams, maxRetries = 3) {
     let lastError;
     const delays = [1000, 2000, 4000]; // Exponential backoff
 
     for (let attempt = 0; attempt < maxRetries; attempt++) {
       try {
-        // Log the full URL being called for debugging
-        console.log(`Calling destination: ${destination} with params: ${queryParams}`);
+        // Get destination details
+        const dest = await getDestination({ destinationName });
 
-        const response = await executeHttpRequest({
-          destinationName: destination,
-          url: queryParams, // Append query params to destination URL
-          method: 'GET',
-          timeout: 5000
+        // Manually construct the full URL
+        // Remove leading slash from queryParams if present
+        const path = queryParams.startsWith('/') ? queryParams.substring(1) : queryParams;
+        const fullUrl = `${dest.url}${dest.url.endsWith('/') ? '' : '/'}${path}`;
+
+        console.log(`Calling URL: ${fullUrl}`);
+
+        const response = await axios.get(fullUrl, {
+          timeout: 5000,
+          headers: dest.headers || {}
         });
 
         if (response.status >= 200 && response.status < 300) {

@@ -1,0 +1,7 @@
+{
+  "Name": "DED_VALIDATE",
+  "Type": "HTTP",
+  "URL": "https://sewiya-connector-mock.cfapps.us10-001.hana.ondemand.com/ded/validate",
+  "Authentication": "NoAuthentication",
+  "ProxyType": "Internet"
+}

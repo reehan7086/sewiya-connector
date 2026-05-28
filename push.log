@@ -18,19 +18,14 @@ Updating with these attributes...
 Manifest applied
 Packaging files to upload...
 Uploading files...
- 0 B / 3.61 KiB    0.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 3.61 KiB / 3.61 KiB  100.00% 1s
+ 0 B / 3.71 KiB    0.00% 3.71 KiB / 3.71 KiB  100.00% 3.71 KiB / 3.71 KiB  100.00% 3.71 KiB / 3.71 KiB  100.00% 3.71 KiB / 3.71 KiB  100.00% 3.71 KiB / 3.71 KiB  100.00% 3.71 KiB / 3.71 KiB  100.00% 3.71 KiB / 3.71 KiB  100.00% 1s
 
 Waiting for API to complete processing files...
 
 Staging app and tracing logs...
-   Downloading nodejs_buildpack...
-   Downloaded nodejs_buildpack
-   Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
-   Security group rules were updated
-   Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
    Downloading app package...
    Downloading build artifacts cache...
-   Downloaded app package (38.1K)
+   Downloaded app package (38.2K)
    Downloaded build artifacts cache (5.6M)
    -----> Nodejs Buildpack version 1.8.44
    -----> Bootstrapping python
@@ -50,7 +45,7 @@ Staging app and tracing logs...
    [34;1mPRO TIP:[0m It is recommended to vendor the application's Node.js dependencies
    Visit http://docs.cloudfoundry.org/buildpacks/node/index.html#vendoring
    NODE_ENV=production
-   NODE_HOME=/tmp/contents3568144435/deps/0/node
+   NODE_HOME=/tmp/contents2496014116/deps/0/node
    NODE_MODULES_CACHE=true
    NODE_VERBOSE=false
    NPM_CONFIG_LOGLEVEL=error
@@ -69,10 +64,6 @@ Staging app and tracing logs...
    Uploading droplet...
    Uploading build artifacts cache...
    Uploaded build artifacts cache (5.6M)
-   Uploaded droplet (60.9M)
-   Uploading complete
-   Cell c839c7b1-088e-41af-b9b7-66256aacd457 stopping instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
-   Cell c839c7b1-088e-41af-b9b7-66256aacd457 destroying container for instance 4d9b2d38-a10c-4bd9-89bd-ac0dd3b3f6fd
 
 Waiting for app sewiya-connector-srv to start...
 
@@ -85,7 +76,7 @@ name:                sewiya-connector-srv
 requested state:     started
 isolation segment:   trial
 routes:              sewiya-connector-srv.cfapps.us10-001.hana.ondemand.com
-last uploaded:       Wed 27 May 13:31:11 IST 2026
+last uploaded:       Thu 28 May 17:26:08 IST 2026
 stack:               cflinuxfs4
 buildpacks:          
 isolation segment:   trial
@@ -97,5 +88,5 @@ sidecars:
 instances:       1/1
 memory usage:    512M
 start command:   npm start
-     state     since                  cpu    memory          disk           logging             cpu entitlement   details   ready
-#0   running   2026-05-27T08:01:30Z   1.0%   80.8M of 512M   231.1M of 1G   0B/s of unlimited   8.1%                        true
+     state     since                  cpu    memory     disk       logging        cpu entitlement   details   ready
+#0   running   2026-05-28T11:56:23Z   0.0%   0B of 0B   0B of 0B   0B/s of 0B/s   0.0%                        true

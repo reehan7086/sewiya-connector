@@ -1,0 +1,8 @@
+{
+  "Name": "ICA_VALIDATE",
+  "Type": "HTTP",
+  "URL": "https://sewiya-connector-mock.cfapps.us10-001.hana.ondemand.com/ica/validate",
+  "Authentication": "NoAuthentication",
+  "ProxyType": "Internet",
+  "Description": "ICA Emirates ID Validation Endpoint"
+}
