@@ -27,7 +27,7 @@ class ConnectorService extends cds.ApplicationService {
         const result = await this._callExternalService('ICA_API', `/validate?eid=${encodeURIComponent(eid)}`, 3);
 
         // Store in cache
-        await INSERT.into(Cache).entries({
+        await UPSERT.into(Cache).entries({
           cacheKey,
           resultPayload: JSON.stringify(result),
           cachedAt: new Date().toISOString(),
@@ -62,7 +62,7 @@ class ConnectorService extends cds.ApplicationService {
         const result = await this._callExternalService('DED_API', `/validate?tl=${encodeURIComponent(tl)}`, 3);
 
         // Store in cache
-        await INSERT.into(Cache).entries({
+        await UPSERT.into(Cache).entries({
           cacheKey,
           resultPayload: JSON.stringify(result),
           cachedAt: new Date().toISOString(),
